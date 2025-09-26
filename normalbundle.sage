@@ -70,6 +70,7 @@ def generate_rand_equations(d,seed=0,rang=200,size=-1):
     return f
 #curve = [x^7*y + y^8, x^4*y^4 + x^2*y^6, x*y^7, x^8, x^6*y^2]
 #check_for_this_curve(curve)
+'''
 r=4
 for deg in range(2001,2002):
     with open('balanced_ab1','a') as f:
@@ -86,7 +87,7 @@ for deg in range(2001,2002):
             print('\n',file=f)
     else:
        assert False
-'''
+
 for i in range(100):
     curve=[ generate_rand_equations(deg, seed=time.time(),rang=100) for j in range(r+1)]#+ [x^(deg-2)*y^2 + x^2*y^(deg-2),x^deg,x^(deg-1)*y+x*y^(deg-1),y^(deg)] #[generate_rand_equations(deg, seed=time.time(),rang=1,size=1) for j in range(r-1)]
     res=check_for_this_curve(curve)
@@ -105,3 +106,6 @@ for i in range(100):
         with open('toohigh','a') as f:
             print(curve,'\n',file=f)
 '''
+r=7
+curve = [x^20,y^20,x*y^19+y*x^19,x^2*y^18+y^2*x^18,x^3*y^17+y^3*x^17,x^4*y^16+y^4*x^16,x^5*y^15+y^5*x^15,x^8*y^12]
+check_for_this_curve(curve)
